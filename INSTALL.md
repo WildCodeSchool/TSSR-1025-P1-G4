@@ -6,7 +6,7 @@
 4. [FAQ](#faq)
 
 # 1. Prérequis techniques
-<span id="prerequis-techniques"></span>
+
 
 # 2. Installation sur le serveur
 <span id="installation-sur-le-serveur"></span>
