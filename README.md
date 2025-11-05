@@ -1,4 +1,4 @@
-![logo de la Wild Code SChool en exemple](Ressources/logo_WCS.jpg)
+# 📰 Projet 1 — Service d’Agrégation de Flux RSS
 
 ## Sommaire 
 
@@ -10,6 +10,8 @@
 - [💡 Solutions trouvées](#solutions-trouvees)
 - [🚀 Améliorations possibles](#ameliorations-possibles)
 
+---
+
 # 🎯 Présentation du projet
 
 ## Projet 1 — Service d’Agrégation de Flux RSS
@@ -20,6 +22,8 @@ Dans le cadre de notre formation **TSSR (Technicien Supérieur Systèmes et Rés
 
 **Objectif final :**  
 Créer deux serveurs (Windows et Linux) capables d’agréger, d’actualiser et d’afficher des flux RSS consultables depuis des postes clients, tout en automatisant la mise à jour et le tri des flux.
+
+---
 
 # 📜 Introduction
 
@@ -33,23 +37,25 @@ Notre projet consiste à :
 - Automatiser la **mise à jour des flux RSS** sur chaque serveur,
 - Créer des **règles automatiques** (filtrage, étiquettes, marquage automatique). (Optionnelle)
 
-
+---
 
 # 👥 Membres du groupe par sprint
 
-**Sprint 1**
+## 🏁 Sprint 1 — Installation & configuration
 
 | Membre   | Rôle       | Missions |
 | -------- | ---------- | -------- |
 | Safiullah | Product Owner  | Gestion client, Mise en place du serveur Windows, Connection flux RSS et création des bdd, Créations des machines clientes (windows et linux) |
 | Matthias | Scrum Master | Organisation, coordination, rédaction du README & INSTALL, Mise en place du serveur Linux, Connection flux RSS et création des bdd |
 
-**Sprint 2**
+## 🧭 Sprint 2 — Automatisation & documentation
 
 | Membre   | Rôle       | Missions |
 | -------- | ---------- | -------- |
 | Matthias | PO         | -        |
 | Safiullah | SM         | -        |
+
+---
 
 # ⚙️ Choix techniques
 
@@ -59,10 +65,10 @@ Notre projet consiste à :
 |----------|--------------|
 | Hyperviseur | VirtualBox |
 | Nombre total de machines | 4 |
-| Réseau Client windows | Interne — 172.16.10.10/24 |
-| Réseau Client Linux | Interne - 172.16.10.20/24 |
-| Réseau Serveur Windows | Interne - 172.16.10.5/24 |
-| Réseau Serveur Linux | Internet - 172.16.10.6/24 |
+| Réseau Client windows | NAT — 172.16.10.10/24 |
+| Réseau Client Linux | NAT - 172.16.10.20/24 |
+| Réseau Serveur Windows | NAT - 172.16.10.5/24 |
+| Réseau Serveur Linux | NAT - 172.16.10.6/24 |
 | Accès Internet | Activé sur tous les serveurs |
 | Pare-feux | Désactivés pour les tests |
 | Résolution par nom | Fichier `hosts`|
@@ -85,8 +91,14 @@ Notre projet consiste à :
 - Accès via navigateur (Firefox / Edge)
 - Test de lecteurs de bureau : *QuiteRSS*, *Fluent Reader*, *Feedbro*
 
+---
+
 # 🧗 Difficultés rencontrées
 
+---
+
 # 💡 Solutions trouvées
+
+---
 
 # 🚀 Améliorations possibles
