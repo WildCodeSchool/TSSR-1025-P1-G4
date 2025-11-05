@@ -28,19 +28,15 @@
 
 | Membre   | Rôle       | Missions |
 | -------- | ---------- | -------- |
-| membre 1 | PO         | -        |
-| membre 2 | SM         | -        |
-| membre 3 | Technicien | -        |
-| membre 4 | Technicien | -        |
+| Safiullah | PO         | -        |
+| Matthias | SM         | -        |
 
 **Sprint 2**
 
 | Membre   | Rôle       | Missions |
 | -------- | ---------- | -------- |
-| membre 1 | Technicien | -        |
-| membre 2 | Technicien | -        |
-| membre 3 | PO         | -        |
-| membre 4 | SM         | -        |
+| Matthias | PO         | -        |
+| Safiullah | SM         | -        |
 
 # ⚙️ Choix techniques
 <span id="choix-techniques"></span>
