@@ -40,6 +40,7 @@
 - Tiny Tiny RSS
 - WAMP
 - LAMP
+- Visual C++
 - ... 
 
 ---
