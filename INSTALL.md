@@ -1,13 +1,13 @@
 ## Sommaire
 
-# * Mon guide détaillé : Installer FreshRSS sur Windows Server avec WAMP et MariaDB *
+#  Guide D'instalation FreshRSS sur Windows Server avec WAMP et MariaDB 
 
-* Je vais vous expliquer toutes les étapes que j’ai suivies pour installer FreshRSS sur Windows Server 2022, 
+## Les étapes que j’ai suivies pour installer FreshRSS sur Windows Server 2022, 
 
 
-## 1. Préparer le serveur
+## 1. Préparer le Windows serveur
 
-Avant de toucher à WAMP ou FreshRSS, j’ai dû m’assurer que mon serveur avait tous les prérequis nécessaires.
+Avant de installer WAMP ou FreshRSS, j’ai dû m’assurer que mon serveur avait tous les prérequis nécessaires.
 
 1.1 Installer Microsoft Visual C++ Redistributables
 
@@ -29,7 +29,7 @@ J’ai choisi la version 64 bits car mon Windows Server est 64 bits.
 
 J’ai lancé le fichier d'instalation (.exe)
 
-⚠️ Astuce : si l’icône est orange ou rouge, je vérifie que Visual C++ est bien installé et que le port 80 n’est pas occupé par une autre application (Skype, IIS…).
+Astuce : si l’icône est orange ou rouge, je vérifie que Visual C++ est bien installé et que le port 80 n’est pas occupé par une autre application (Skype, IIS…).
 
 J’ai accepté toutes les étapes de l’assistant.
 
@@ -82,7 +82,7 @@ Je coche Donner tous les privilèges sur la base freshrss
 
 Je clique sur Exécuter
 
-⚠️ Astuce : Toujours créer un utilisateur dédié pour FreshRSS, plutôt que d’utiliser root. Cela sécurise la base.
+Astuce : Toujours créer un utilisateur dédié pour FreshRSS, plutôt que d’utiliser root. Cela sécurise la base.
 
 ### 4. Télécharger et préparer FreshRSS
 4.1 Télécharger FreshRSS 
@@ -153,87 +153,69 @@ Require all granted
 
 Je sauvegarde et je redémarre tous les services WAMP.
 
-⚠️ Astuce : La ligne Require all granted permet aux VM et autres machines du réseau d’accéder à FreshRSS. Sans ça, l’accès est limité au serveur local.
+Astuce : La ligne Require all granted permet aux VM et autres machines du réseau d’accéder à FreshRSS. Sans ça, l’accès est limité au serveur local.
 
-6. Lancer l’installation dans le navigateur
-
-J’ouvre : http://localhost/freshrss/
-
+## 6. J’ouvre : http://localhost/freshrss/
 L’assistant d’installation apparaît avec plusieurs étapes : langue, vérification système, configuration base de données, création admin.
 
-## 7. Configurer FreshRSS
-### Étape 1 : Langue
+### 6.1 Configurer FreshRSS
+#### Étape 1 : Langue
 Je sélectionne Français
 
-### Étape 2 : Vérifications système
+#### Étape 2 : Vérifications système
 Tous les modules doivent être en vert.
 Si un module est rouge, je vais dans WAMP → PHP → PHP extensions et j’active :
+-curl
+-mbstring
+-openssl
+-pdo_mysql
+-Puis je redémarre WAMP.
 
-curl
-mbstring
-openssl
-pdo_mysql
-Puis je redémarre WAMP.
-
-### Étape 3 : Base de données
+#### Étape 3 : Base de données
 Champ	Ce que je remplis
 Type de base	MySQL / MariaDB
 Hôte	localhost
 Utilisateur	freshrss
-Mot de passe	mon mot de passe
+Mot de passe	
 Base de données	freshrss
 Préfixe des tables	freshrss_
-
 Je clique sur Test connection, puis Next si tout fonctionne.
-
 Je clique sur Install pour finaliser.
 
-8. Ajouter des flux RSS
+## 7. Ajouter des flux RSS
 Ajouter une catégorie
-
 Dans FreshRSS → Add a category
-
 Nom : Actualités → je clique sur Add
-
 Ajouter un flux
-
 Dans Add a feed :
-
 URL du flux : https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml
-
 Catégorie : Actualités
-
 Je clique sur Add
+Astuce : Si le flux apparaît en rouge, je vérifie la connexion Internet et les extensions PHP curl et openssl.
 
-⚠️ Astuce : Si le flux apparaît en rouge, je vérifie la connexion Internet et les extensions PHP curl et openssl.
+## 8. Accès depuis les VM
 
-9. Accès depuis les VM
-
-Depuis la VM : http://IP_du_serveur/freshrss/
-
+Depuis la VM : http://srvwin01/freshrss/
 Si ça ne fonctionne pas :
-
 Vérifier le pare-feu Windows
-
 Vérifier le fichier d’alias (Require all granted)
+Redamarrer WAMP
 
-Redémarrer WAMP
+## 9. Problèmes fréquents
+- Problème	Cause probable	Solution
+- Page 404	Mauvais alias	Vérifier freshrss.conf
+- Page blanche	Extension PHP manquante	Activer mbstring, json, pdo_mysql
+- Flux rouge	URL invalide ou pas d’accès Internet	Vérifier la connexion et activer curl + openssl
+- VM ne peut pas accéder	Require local	Mettre Require all granted
+- WAMP ne démarre pas	Visual C++ manquant	Réinstaller tous les redistribuables Visual C++
 
-## 10. Problèmes fréquents
-Problème	Cause probable	Solution
-Page 404	Mauvais alias	Vérifier freshrss.conf
-Page blanche	Extension PHP manquante	Activer mbstring, json, pdo_mysql
-Flux rouge	URL invalide ou pas d’accès Internet	Vérifier la connexion et activer curl + openssl
-VM ne peut pas accéder	Require local	Mettre Require all granted
-WAMP ne démarre pas	Visual C++ manquant	Réinstaller tous les redistribuables Visual C++
-11. Vérification finale
+## 10. Vérification finale
+- WAMP vert
 
-WAMP vert
+- Accès à http://localhost/freshrss/ 
+- VM peuvent accéder via l’IP ou nom du serveur Ok 
 
-Accès à http://localhost/freshrss/ OK
-VM peuvent accéder via l’IP du serveur Ok 
-
-Flux RSS affichés non pas encore 
+- Flux RSS affichés non pas encore problem
 
 
 
@@ -241,8 +223,8 @@ Flux RSS affichés non pas encore
 
 ## 13. Liens officiels 
 
-Visual C++ Redistributables : https://wampserver.aviatechno.net/ -> télécharger pulusier version de Visual C++
-Téléchargement WAMP : https://wampserver.aviatechno.net/ -> download-wampserver-64bits
-Téléchargement FreshRSS : https://github.com/FreshRSS/FreshRSS/releases/tag/1.27.1
+- Visual C++ Redistributables : https://wampserver.aviatechno.net/ -> télécharger pulusier version de Visual C++
+- Téléchargement WAMP : https://wampserver.aviatechno.net/ -> download-wampserver-64bits
+- Téléchargement FreshRSS : https://github.com/FreshRSS/FreshRSS/releases/tag/1.27.1
 
 
