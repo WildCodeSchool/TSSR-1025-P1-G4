@@ -13,6 +13,7 @@
 
 # 3. Installation sur le client
 <span id="installation-sur-le-client"></span>
+
 ## Installation et gestion de Fluent Reader sur Ubuntu
 
 Présentation **Fluent Reader** est un lecteur RSS moderne, open source et multiplateforme.   Il permet de regrouper plusieurs flux RSS dans une interface claire et rapide, disponible sur **Ubuntu**, **Windows** et **macOS**.  ---  
