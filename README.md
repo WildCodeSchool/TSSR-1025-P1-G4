@@ -24,7 +24,7 @@
 
 # 👥 Membres du groupe par sprint
 <span id="membres-du-groupe-par-sprint"></span>
-**Sprint 1**
+**Sprint 1** 
 
 | Membre   | Rôle       | Missions |
 | -------- | ---------- | -------- |
