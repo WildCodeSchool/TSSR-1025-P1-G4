@@ -73,7 +73,8 @@ WAMP requiert plusieurs versions de Visual C++ pour fonctionner correctement.
 2. Téléchargez et installez toutes les versions x86 et x64 (2008 à 2022).  
 3. Redémarrez le serveur une fois l’installation terminée.
 
-**SCREEN**
+![Visuall C++ instalation image](https://github.com/WildCodeSchool/TSSR-1025-P1-G4/blob/Safiullah/Ressources/installation%20C%2B%2B.PNG)
+
 
 ---
 
@@ -88,7 +89,7 @@ WAMP requiert plusieurs versions de Visual C++ pour fonctionner correctement.
    `C:\wamp64\`
 4. Acceptez les options proposées et lancez WAMP automatiquement à la fin.
 
-**SCREEN**
+![Wamp instalation image](https://github.com/WildCodeSchool/TSSR-1025-P1-G4/blob/Safiullah/Ressources/wamp%20instalation%20start.PNG)
 
 🧠 *Astuce :*  
 Si l’icône WAMP est **orange ou rouge**, vérifiez que :
@@ -104,7 +105,7 @@ Lorsque l’icône devient **verte**, les trois services sont actifs :
 - PHP ✅  
 - MariaDB ✅  
 
-**SCREEN**
+![Wamp vrification](https://github.com/WildCodeSchool/TSSR-1025-P1-G4/blob/Safiullah/Ressources/wamp-verification.jpg)
 
 ---
 
@@ -119,7 +120,7 @@ Lorsque l’icône devient **verte**, les trois services sont actifs :
    - Utilisateur : `root`
    - Mot de passe : *(laisser vide par défaut)*  
 
-**SCREEN**
+![php-myadim-image](https://github.com/WildCodeSchool/TSSR-1025-P1-G4/blob/Safiullah/Ressources/php-my-adimconfig.jpg)
 
 ---
 
@@ -130,7 +131,7 @@ Lorsque l’icône devient **verte**, les trois services sont actifs :
 3. Choisissez l’interclassement : `utf8mb4_general_ci`.  
 4. Cliquez sur **Créer**.  
 
-**SCREEN**
+![adding-new-basse-forfreshrss](https://github.com/WildCodeSchool/TSSR-1025-P1-G4/blob/Safiullah/Ressources/adding%20newbasse.jpg)
 
 ---
 
@@ -147,7 +148,7 @@ Lorsque l’icône devient **verte**, les trois services sont actifs :
 🧠 *Astuce :*  
 Ne jamais utiliser `root` pour les applications. Créez toujours un utilisateur dédié pour plus de sécurité.
 
-**SCREEN**
+![creating-new-user-for-freshrss](https://github.com/WildCodeSchool/TSSR-1025-P1-G4/blob/Safiullah/Ressources/creating-user-mariasql.jpg)
 
 ---
 
@@ -162,7 +163,7 @@ Ne jamais utiliser `root` pour les applications. Créez toujours un utilisateur 
    `C:\wamp64\www\`
 4. Renommez le dossier en **freshrss** (en minuscules).
 
-**SCREEN**
+![freshrss-downloading-reanaming](https://github.com/WildCodeSchool/TSSR-1025-P1-G4/blob/Safiullah/Ressources/freesrss%20changing%20name%20and%20extract%20to%20wwwfolder.PNG)
 
 ---
 
@@ -176,7 +177,7 @@ Ne jamais utiliser `root` pour les applications. Créez toujours un utilisateur 
 3. Ajoutez l’utilisateur **Everyone** → cochez **Lecture et exécution**, **Lecture**, **Écriture**.  
 4. Appliquez les modifications à tous les sous-dossiers (`p/`, `data/`, `config/`).
 
-**SCREEN**
+![adding-permissions-frss-dr](https://github.com/WildCodeSchool/TSSR-1025-P1-G4/blob/Safiullah/Ressources/permision%20de%20droit%20freshrss-11-15%20222619.jpg)
 
 ---
 
@@ -188,7 +189,7 @@ Ne jamais utiliser `root` pour les applications. Créez toujours un utilisateur 
    - Directory path : `C:/wamp64/www/freshrss/p/`  
 3. Cliquez sur **OK**.
 
-**SCREEN**
+![alias-creating](https://github.com/WildCodeSchool/TSSR-1025-P1-G4/blob/Safiullah/Ressources/configurer%20l'alias.PNG)
 
 ---
 
@@ -208,7 +209,7 @@ Require all granted
 
 3. Sauvegardez et fermez.
 
-**SCREEN**
+![apache-configuration](https://github.com/WildCodeSchool/TSSR-1025-P1-G4/blob/Safiullah/Ressources/apache%20configuration%20donssier%20myalias.conf-%20require%20all%20granted.PNG)
 
 ---
 
@@ -217,7 +218,7 @@ Require all granted
 Cliquez sur l’icône WAMP → **Restart All Services**.  
 L’icône doit devenir **verte**.  
 
-**SCREEN**
+![WAMP-restart](https://github.com/WildCodeSchool/TSSR-1025-P1-G4/blob/Safiullah/Ressources/wamp%20instalation%20start.PNG)
 
 ---
 
@@ -232,7 +233,6 @@ L’icône doit devenir **verte**.
 ### 6.1 : Langue
 
 Choisissez **Français**, puis cliquez sur **Suivant**.  
-**SCREEN**
 
 ---
 
@@ -246,7 +246,7 @@ Si certains sont rouges, activez-les dans WAMP → PHP → **PHP Extensions** :
 - `pdo_mysql`  
 
 Puis redémarrez WAMP.  
-**SCREEN**
+![fsrr-vrification](https://github.com/WildCodeSchool/TSSR-1025-P1-G4/blob/Safiullah/Ressources/instalation%20freshrss.PNG)
 
 ---
 
@@ -264,7 +264,7 @@ Remplissez les champs :
 | Préfixe des tables | freshrss_          |
 
 Cliquez sur **Valider** → **Installer**.  
-**SCREEN**
+![frss-database-configuration](https://github.com/WildCodeSchool/TSSR-1025-P1-G4/blob/Safiullah/Ressources/instalation%20freshrss%20etape%203.PNG)
 
 ---
 
@@ -277,7 +277,7 @@ Cliquez sur **Valider** → **Installer**.
 | Méthode d’authentification | Formulaire traditionnel |
 
 Cliquez sur **Installer FreshRSS**.  
-**SCREEN**
+![frss-useracoutncreationg](https://github.com/WildCodeSchool/TSSR-1025-P1-G4/blob/Safiullah/Ressources/instalation%20freshrss%20etape%204.PNG)
 
 ---
 
