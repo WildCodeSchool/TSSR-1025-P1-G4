@@ -361,7 +361,205 @@ FreshRSS peut maintenant ajouter des flux HTTPS sans erreur.
 
 # 3. Installation sur le serveur Linux (TT-RSS)
 
-## Étape 1 -
+## Étape 1. Pré-requis
+
+- Debian récente
+- Accès root ou sudo
+- Apache2
+- PHP 8.x avec extensions : pgsql, xml, mbstring, curl, gd, intl
+- PostgreSQL
+- Accès réseau sortant fonctionnel (DNS et Internet)
+
+---
+
+## Étape  2. Mettre Debian à jour
+
+Exécuter :
+
+`apt update && apt upgrade -y`
+
+---
+
+## Étape  3. Installer les dépendances nécessaires
+
+Installer Apache, PHP et modules requis, ainsi que PostgreSQL :
+
+`apt install apache2 php php-cli php-fpm php-mbstring php-xml php-curl php-gd php-json php-pgsql php-intl git -y`
+
+`apt install postgresql -y`
+
+---
+
+## Étape  4. Correction DNS (si nécessaire)
+
+Si la VM ne résout pas les noms de domaine (ex. git.tt-rss.org) :
+
+Éditer `/etc/resolv.conf` :
+
+`nano /etc/resolv.conf`
+
+Ajouter :
+
+nameserver 1.1.1.1
+nameserver 8.8.8.8
+
+Si le fichier se verrouille automatiquement, empêcher sa réécriture :
+
+`chattr -i /etc/resolv.conf`
+
+Vérifier la résolution :
+
+`ping git.tt-rss.org`
+
+---
+
+## Étape 5. Installation de Tiny Tiny RSS
+
+Aller dans le répertoire `/var/www` :
+
+`cd /var/www`
+
+Cloner le dépôt officiel TT-RSS :
+
+`git clone https://git.tt-rss.org/fox/tt-rss.git ttrss`
+
+Attribuer les droits à l’utilisateur web `www-data` :
+
+`chown -R www-data:www-data /var/www/ttrss`
+
+---
+
+## Étape 6. Configuration d’Apache
+
+Créer un VirtualHost pour TT-RSS afin que le serveur web serve correctement l’application.  
+Créer le fichier de configuration :  
+nano /etc/apache2/sites-available/ttrss.conf
+Ajouter le contenu suivant :  
+<VirtualHost *:80>  
+    ServerName 172.16.10.6  
+	DocumentRoot /var/www/ttrss  
+	<Directory /var/www/ttrss/>
+        AllowOverride All  
+		Require all granted  
+		</Directory>  
+		</VirtualHost>
+ 
+| ServerName          | IP de la VM |    
+| DocumentRoot        | répertoire TT-RSS |    
+| AllowOverride All   | permet l’usage de .htaccess pour les réécritures d’URL |    
+| Require all granted | autorise l’accès à tous les clients |  
+
+Activer le site et le module rewrite :  
+a2ensite ttrss.conf  
+a2enmod rewrite  
+systemctl reload apache2
+
+-----
+
+## Étape 7. Configuration PostgreSQL
+
+7.1 Créer l’utilisateur PostgreSQL    
+sudo -u postgres createuser ttrssuser -P    
+Définir un mot de passe sécurisé pour ttrssuser.
+
+7.2 Créer la base TT-RSS  
+sudo -u postgres createdb -O ttrssuser ttrss
+
+7.3 Attribuer les droits nécessaires  
+Se connecter en tant que postgres :  
+sudo -i -u postgres    
+psql    
+Attribuer tous les privilèges :    
+ALTER USER ttrssuser WITH SUPERUSER;    
+GRANT ALL PRIVILEGES ON DATABASE ttrss TO ttrssuser;    
+GRANT ALL PRIVILEGES ON SCHEMA public TO ttrssuser;    
+ALTER SCHEMA public OWNER TO ttrssuser;    
+\q    
+exit    
+
+------
+
+## Étape 8. Initialisation du schéma de base TT-RSS  
+Exécuter le schéma SQL fourni par TT-RSS pour créer toutes les tables et fonctions nécessaires :  
+sudo -u postgres psql -U ttrssuser -d ttrss -f /var/www/ttrss/sql/pgsql/schema.sql  
+
+------
+
+## Étape 9. Premier lancement et configuration Web  
+Ouvrir dans le navigateur :  
+http://172.16.10.6  
+Configurer l’accès à la base :  
+| Base         | ttrss |    
+| Utilisateur  | ttrssuser |    
+| Mot de passe | celui défini précédemment |    
+| Type         | PostgreSQL |    
+Changer le mot de passe par défaut du compte admin.  
+
+-----
+
+
+## Étape 10. Mise à jour du schéma TT-RSS (obligatoire)  
+cd /var/www/ttrss  
+sudo -u www-data php update.php --update-schema  
+Cette étape assure que TT-RSS reconnaît toutes les tables et fonctions.  
+
+-------
+
+## Étape 11. Ajouter des flux RSS  
+Dans TT-RSS → Configuration → Flux → Ajouter un flux  
+Exemples :  
+CERT-FR : https://www.cert.ssi.gouv.fr/feed/  
+Korben : https://korben.info/feed  
+Organiser les flux dans des catégories.  
+
+-------
+
+## Étape 12. Créer des catégories  
+Configuration → Flux → Catégories → Ajouter  
+Exemples :  
+Cyber  
+Actus  
+Tech  
+Déplacer les flux dans leur catégorie correspondante.  
+
+--------
+
+##  Étape 13. Test de mise à jour manuelle des flux  
+Avant d’automatiser avec Cron, tester la récupération des flux :  
+cd /var/www/ttrss  
+sudo -u www-data php update.php --feeds  
+Si aucune erreur n’apparaît, tout fonctionne.  
+
+---------
+
+## Étape 14. Automatisation avec Cron  
+Créer un fichier cron :  
+nano /etc/cron.d/ttrss  
+Ajouter la ligne suivante pour mettre à jour les flux toutes les 15 minutes :  
+*/15 * * * * www-data php /var/www/ttrss/update.php --feeds >> /var/log/ttrss_feeds.log 2>&1  
+Appliquer les droits corrects :  
+chmod 644 /etc/cron.d/ttrss  
+systemctl restart cron  
+Vérifier les logs :  
+tail -n 20 /var/log/ttrss_feeds.log  
+
+---------
+
+## 15. Vérifications finales  
+Vérifier Apache : systemctl status apache2  ✅  
+Vérifier PostgreSQL : systemctl status postgresql  ✅  
+Vérifier que TT-RSS récupère bien des articles via l’interface Web.  ✅  
+
+----------
+
+## Liens utiles
+TT-RSS Git : https://git.tt-rss.org/fox/tt-rss.git
+
+CERT-FR feed : https://www.cert.ssi.gouv.fr/feed/
+
+Documentation PostgreSQL : https://www.postgresql.org/docs/
+
+Apache docs : https://httpd.apache.org/docs/
 
 ---
 
