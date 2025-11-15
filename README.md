@@ -130,7 +130,7 @@ Un **agrégateur RSS** regroupe ces flux pour offrir une lecture centralisée et
 
 | Problème | Solution mise en place |
 |-----------|-----------------------|
-| Édition de `/etc/resolv.conf` pour ajouter des serveurs DNS valides
+| Problème  DNS  | Édition de `/etc/resolv.conf` pour ajouter des serveurs DNS valides |
 | Erreur PDO sur Debian | Installation des modules PHP manquants et mise en place d’une autre base de données PostgreSQL |
 | API FreshRSS inactive | Activation manuelle de “l’API Google Reader” dans les paramètres |
 | Flux RSS — erreur cURL | Installation du fichier `cacert.pem` manquant dans le dossier `C:/wamp64/bin/php/php8.3.14/extras/ssl/` |
