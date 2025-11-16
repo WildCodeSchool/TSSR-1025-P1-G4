@@ -703,7 +703,8 @@ Ainsi, les utilisateurs des clients (FluentReader, NewsFlash, etc) reçoivent to
 ### Étape 1. Ouvrir le planificateur de tâches
 - Dans la barre de recherche Windows, tapez 'planificateur de tâches'.
 - Cliquez sur **Créer une tâche** dans le menu à droite
-  **SCREEN**
+
+![1_server_manager](https://github.com/WildCodeSchool/TSSR-1025-P1-G4/blob/main/Ressources/automatisation_mise_a_jour/1_server_manager)
 
 --------
 
