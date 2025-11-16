@@ -300,7 +300,7 @@ Retournez sur `phpinfo()` et vérifiez que :
 ✅ Si c’est le cas, la configuration SSL fonctionne.  
 FreshRSS peut maintenant ajouter des flux HTTPS sans erreur.
 
-![frss-cURLerror60](https://github.com/WildCodeSchool/TSSR-1025-P1-G4/blob/Safiullah/Ressources/error_curl/1_verification.png)
+![1_verification](https://github.com/WildCodeSchool/TSSR-1025-P1-G4/blob/main/Ressources/error_curl/1_verification.png)
 
 --------
 
