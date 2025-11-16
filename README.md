@@ -61,7 +61,7 @@ Un **agrégateur RSS** regroupe ces flux pour offrir une lecture centralisée et
 | Membre | Rôle | Missions principales |
 |--------|------|----------------------|
 | **Matthias** | Product Owner | Gestion avec le client, correction des problèmes de flux sur FreshRSS, installation et configuration des logiciels de bureau client |
-| **Safiullah** | Scrum Master | Gestion du planning, correction des problèmes sur le serveur Debian |
+| **Safiullah** | Scrum Master | Gestion du planning, correction des problèmes sur le serveur Debian documentation prèparation (Guide Install TTRSS, FreshRSS |
 
 ---
 
@@ -140,4 +140,3 @@ Un **agrégateur RSS** regroupe ces flux pour offrir une lecture centralisée et
 
 - Conteneuriser FreshRSS et TT_RSS avec Docker.  
 - Centraliser les flux sur un seul serveur mutualisé.  
-- ...
