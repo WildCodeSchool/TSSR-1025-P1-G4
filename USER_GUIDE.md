@@ -17,7 +17,7 @@ http://172.16.10.5/freshrss/
 1.2 Entrer l’adresse du serveur FreshRSS ci-dessus.  
 1.3 L’écran d’accueil de FreshRSS s’affiche.  
    **SCREEN**
-1.3 Saisir vos identifiants :
+1.4 Saisir vos identifiants :
    - **Nom d’utilisateur :** admin  
    - **Mot de passe :** (fourni par l’administrateur)
 1.5 Cliquer sur **Connexion**.  
@@ -49,7 +49,7 @@ Une fois connecté, vous accédez :
 
 ----
 
-## 1.3 Ajouter le flux FreshRSS sur FluentReader et NewsFlash
+## Ajouter le flux FreshRSS sur FluentReader et NewsFlash
 Sur Les poste clients **Windows (Fluent Reader)** et **Ubuntu (NewsFlash)** permettent de consulter les flux à distance via l’API Google Reader.
 
 ### Sous Windows Fluent Reader
