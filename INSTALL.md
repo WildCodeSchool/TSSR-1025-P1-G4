@@ -283,18 +283,27 @@ Placez le fichier dans :
 	→ Copiez le chemin indiqué (souvent dans `apache/bin/php.ini`).
 3. Ouvrez ce fichier avec le Bloc-notes.
 4. Ajoutez à la fin :
-```curl.cainfo = "C:/wamp64/bin/php/php8.3.14/extras/ssl/cacert.pem"```
+```curl.cainfo = "C:/wamp64/bin/php/php8.3.14/extras/ssl/cacert.pem"```  
 ```openssl.cafile = "C:/wamp64/bin/php/php8.3.14/extras/ssl/cacert.pem"```
-5. Enregistrez, puis redémarrez Apache :
-	WAMP → Apache → **Restart Service**
 
-###  7.3 : Vérification
+6. Enregistrez, puis redémarrez Apache :
+   
+### 7.3 Modifier le fichier `php.ini  
+Aller au chemin indiqué C:\wamp64\bin\php\php8.3.14\php.ini  
+2. Ouvrez le fichier (php.ini) avec le Bloc-notes  
+3. Ajoutez à la fin : (allow_url_fopen = On)  
+
+**SCREEN**
+
+### 7.4 WAMP → Apache → **Restart Service**
+
+###  7.5 : Vérification
 
 Retournez sur `phpinfo()` et vérifiez que :
 
 | Directive | Valeur |
 |------------|--------|
-| `curl.cainfo` | C:/wamp64/bin/php/php8.3.14/extras/ssl/cacert.pem |
+| `curl.cainfo` | C:/wamp64/bin/php/php8.3.14/extras/ssl/cacert.pem |  
 | `openssl.cafile` | C:/wamp64/bin/php/php8.3.14/extras/ssl/cacert.pem |
 
 ✅ Si c’est le cas, la configuration SSL fonctionne.  
