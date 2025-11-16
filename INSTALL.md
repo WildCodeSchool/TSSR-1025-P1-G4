@@ -546,11 +546,9 @@ Avant de commencer, assurez-vous que :
 ### Étape 2. Installation sur Windows
 
 1. Ouvrez le **Microsoft Store**.  
-    **SCREEN**
 2. Recherchez **Fluent Reader**.  
-    **SCREEN**
 3. Cliquez sur **Obtenir** ou **Installer**.  
-    **SCREEN**
+![1_microsoft_store](https://github.com/WildCodeSchool/TSSR-1025-P1-G4/blob/main/Ressources/installation_fluentreader/1_microsoft_store.png)
 4. Une fois l’installation terminée, l’application est disponible dans le menu **Démarrer**.
 
 --------
@@ -561,8 +559,7 @@ Avant de commencer, assurez-vous que :
 2. Recherchez **Fluent Reader**.
 3. Cliquez pour lancer l’application.
 4. L’interface principale s’affiche.  
-    **SCREEN**
-
+![4_fluentreader](https://github.com/WildCodeSchool/TSSR-1025-P1-G4/blob/main/Ressources/installation_fluentreader/4_fluentreader.png)
 --------
 
 ### Étape 4. Connexion à un serveur FreshRSS
@@ -570,16 +567,16 @@ Avant de commencer, assurez-vous que :
 Fluent Reader peut se connecter directement à un serveur **FreshRSS** pour récupérer et synchroniser vos flux.
 
 1. Dans le menu principal, ouvrez **Settings → Service**.  
-    **SCREEN**
+![5_api_service](https://github.com/WildCodeSchool/TSSR-1025-P1-G4/blob/main/Ressources/installation_fluentreader/5_api_service.png)
 2. Choisissez le type de compte **Google Reader API**.  
-    **SCREEN**
+![6_api_parametrage](https://github.com/WildCodeSchool/TSSR-1025-P1-G4/blob/main/Ressources/installation_fluentreader/6_api_parametrage.png)
 3. Remplissez les champs avec les informations de votre serveur FreshRSS :
     |Champ|Description|Exemple|
     |---|---|---|
    |**Adresse**|Adresse de l’API Google Reader|`http://172.16.10.5/freshrss/api/greader.php`|
-    |**Pseudo**|Votre identifiant FreshRSS|`admin`|
-    |**Mot de passe**|Votre mot de passe FreshRSS|`motdepasse`|
-	**SCREEN**
+   |**Pseudo**|Votre identifiant FreshRSS|`admin`|
+   |**Mot de passe**|Votre mot de passe FreshRSS|`motdepasse`|
+![7_api_connectes](https://github.com/WildCodeSchool/TSSR-1025-P1-G4/blob/main/Ressources/installation_fluentreader/7_api_connectes.png)
 4. Cliquez sur **Connect** pour établir la liaison avec le serveur.
 5. Si la connexion réussit, vos flux RSS apparaissent automatiquement dans Fluent Reader.
 
@@ -592,7 +589,6 @@ L’URL doit pointer vers **l’API Google Reader** (`/api/greader.php`) et non 
 
 1. Depuis l’interface de **FreshRSS**, ajoutez un nouveau flux RSS (via le navigateur).
 2. Dans **Fluent Reader**, cliquez sur le bouton **Refresh (🔄)** pour actualiser les flux.  
-    **SCREEN**
 3. Le nouveau flux doit apparaître automatiquement.
 4. Marquez un article comme **lu** dans Fluent Reader, puis vérifiez dans FreshRSS : il doit apparaître comme **lu** également.
 
