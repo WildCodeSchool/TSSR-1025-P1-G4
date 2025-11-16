@@ -1,63 +1,71 @@
-# 📰 Projet 1 — Service d’Agrégation de Flux RSS
+#  Projet 1 Service d’Agrégation de Flux RSS
 
 ## Sommaire 
 
-- [🎯 Présentation du projet](#presentation-du-projet)
-- [📜 Introduction](#introduction)
-- [👥 Membres du groupe par sprint](#membres-du-groupe-par-sprint)
-- [⚙️ Choix Techniques](#choix-techniques)
-- [🧗Difficultés rencontrées](#difficultes-rencontrees)
-- [💡 Solutions trouvées](#solutions-trouvees)
-- [🚀 Améliorations possibles](#ameliorations-possibles)
+- [ Présentation du projet](#présentation-du-projet)
+- [ Introduction](#introduction)
+- [ Membres du groupe par sprint](#membres-du-groupe-par-sprint)
+- [ Choix techniques](#choix-techniques)
+- [ Difficultés rencontrées](#difficultés-rencontrées)
+- [ Solutions trouvées](#solutions-trouvées)
+- [ Améliorations possibles](#améliorations-possibles)
 
 ---
 
-# 🎯 Présentation du projet
+# Présentation du projet
 
-## Projet 1 — Service d’Agrégation de Flux RSS
-Ce projet vise à déployer deux agrégateurs RSS sur serveurs Windows et Linux.
+## Projet 1 Service d’Agrégation de Flux RSS
+
+Ce projet vise à déployer deux agrégateurs RSS sur serveurs **Windows** et **Linux**,  
+et à permettre la consultation et la mise à jour automatique des flux depuis des postes clients.
 
 **Contexte :**  
-Dans le cadre de notre formation **TSSR (Technicien Supérieur Systèmes et Réseaux)** à la Wild Code School, nous devons mettre en place un service permettant de **regrouper et de consulter automatiquement des flux RSS** depuis plusieurs sources d’actualités.
+Dans le cadre de la formation **TSSR (Technicien Supérieur Systèmes et Réseaux)** à la Wild Code School,  
+l’objectif est de concevoir une infrastructure simple permettant de **centraliser des flux RSS**,  
+de les rendre accessibles depuis plusieurs machines, et d’automatiser leur mise à jour.
 
 **Objectif final :**  
-Créer deux serveurs (Windows et Linux) capables d’agréger, d’actualiser et d’afficher des flux RSS consultables depuis des postes clients, tout en automatisant la mise à jour et le tri des flux.
+- Créer deux serveurs (Windows et Linux) capables d’agréger et de diffuser des flux RSS,  
+- Permettre la consultation depuis les clients (Windows et Ubuntu),  
+- Automatiser la mise à jour des flux, 
+- (Optionnel) Créer des **règles automatiques** (étiquettes, marquage).
 
 ---
 
-# 📜 Introduction
+# Introduction
 
-Un **flux RSS** est un fichier XML contenant la liste des dernières publications d’un site web.  
-Un **agrégateur RSS** est une application qui regroupe automatiquement ces flux pour permettre une lecture centralisée.
+Un **flux RSS** est un fichier XML listant les dernières publications d’un site web.  
+Un **agrégateur RSS** regroupe ces flux pour offrir une lecture centralisée et simplifiée.
 
-Notre projet consiste à :
-- Installer **FreshRSS** sur un serveur Windows (SRVWIN01),
-- Installer **Tiny Tiny RSS (TT-RSS)** sur un serveur Linux (SRVLX01),
-- Permettre la **consultation depuis deux postes clients** (WIN01 et UBU01),
-- Automatiser la **mise à jour des flux RSS** sur chaque serveur,
-- Créer des **règles automatiques** (filtrage, étiquettes, marquage automatique). (Optionnelle)
-
----
-
-# 👥 Membres du groupe par sprint
-
-## 🏁 Sprint 1 — Installation & configuration
-
-| Membre   | Rôle       | Missions |
-| -------- | ---------- | -------- |
-| Safiullah | Product Owner  | Gestion client, Mise en place du serveur Windows, Connection flux RSS et création des bdd, Créations des machines clientes (windows et linux) |
-| Matthias | Scrum Master | Organisation, coordination, rédaction du README & INSTALL, Mise en place du serveur Linux, Connection flux RSS et création des bdd |
-
-## 🧭 Sprint 2 — Automatisation & documentation
-
-| Membre   | Rôle       | Missions |
-| -------- | ---------- | -------- |
-| Matthias | PO         | -        |
-| Safiullah | SM         | -        |
+## Objectifs techniques
+- Installer **FreshRSS** sur un serveur Windows (SRVWIN01)  
+- Installer **Tiny Tiny RSS (TT-RSS)** sur un serveur Linux (SRVLX01)  
+- Permettre la consultation depuis les postes clients : WIN01 et UBU01  
+- Automatiser les mises à jour sur chaque serveur  
+- Tester des lecteurs RSS clients : **Fluent Reader** et **NewsFlash**  
+- Mettre en place la synchronisation entre clients et serveur  
 
 ---
 
-# ⚙️ Choix techniques
+# Membres du groupe par sprint
+
+## Sprint 1 Installation & configuration
+
+| Membre | Rôle | Missions principales |
+|--------|------|----------------------|
+| **Safiullah** | Product Owner | Installation et configuration de FreshRSS (Windows Server), création des clients (Windows & Ubuntu), gestion réseau |
+| **Matthias** | Scrum Master | Installation et configuration de TT-RSS (Debian), documentation (`README`, `INSTALL`, `USER_GUIDE`), coordination et suivi GitHub |
+
+## Sprint 2 Automatisation & documentation
+
+| Membre | Rôle | Missions principales |
+|--------|------|----------------------|
+| **Matthias** | Product Owner | Gestion avec le client, correction des problèmes de flux sur FreshRSS, installation et configuration des logiciels de bureau client |
+| **Safiullah** | Scrum Master | Gestion du planning, correction des problèmes sur le serveur Debian |
+
+---
+
+# Choix techniques
 
 ## **Matériel & environnement**
 
@@ -65,40 +73,71 @@ Notre projet consiste à :
 |----------|--------------|
 | Hyperviseur | VirtualBox |
 | Nombre total de machines | 4 |
-| Réseau Client windows | NAT — 172.16.10.10/24 |
-| Réseau Client Linux | NAT - 172.16.10.20/24 |
-| Réseau Serveur Windows | NAT - 172.16.10.5/24 |
-| Réseau Serveur Linux | NAT - 172.16.10.6/24 |
-| Accès Internet | Activé sur tous les serveurs |
+| Réseau interne | 172.16.10.0/24 |
+| SRVWIN01 | Windows Server 2022 — IP 172.16.10.5 |
+| SRVLX01 | Debian 13 — IP 172.16.10.6 |
+| WIN01 | Client Windows — IP 172.16.10.10 |
+| UBU01 | Client Ubuntu — IP 172.16.10.20 |
+| Accès Internet | Activé pour les serveurs |
+| Résolution de noms | Fichier `hosts` |
 | Pare-feux | Désactivés pour les tests |
-| Résolution par nom | Fichier `hosts`|
 
-### 🪟 Serveur Windows (SRVWIN01)
+---
 
+### Serveur Windows (SRVWIN01)
 - **Système :** Windows Server 2022  
 - **Logiciel :** FreshRSS  
-- **Serveur Web :** IIS (ou WAMP)  
-- **Base de données :** SQLite / MariaDB  
-- **Automatisation :** Planificateur de tâches Windows
+- **Serveur web :** WAMP (Apache2 + MariaDB + PHP)  
+- **Base de données :** MariaDB  
+- **Automatisation :** Potentiellement le "Planificateur de tâches Windows"
 
-### 🐧 Serveur Linux (SRVLX01)
-- **Système :** Debian 12  
+### Serveur Linux (SRVLX01)
+- **Système :** Debian 13  
 - **Logiciel :** Tiny Tiny RSS (TT-RSS)  
-- **Serveur Web :** Apache2 + PHP + MariaDB  
-- **Automatisation :** cron job / systemd timer  
+- **Serveur web :** LAMP (Apache2 + PHP + MariaDB)  
+- **Base de données :** PostgreSQL  
+- **Automatisation :** Potentiellement "Cron job / systemd timer"  
 
-### 💻 Clients (WIN01 et UBU01)
-- Accès via navigateur (Firefox / Edge)
-- Test de lecteurs de bureau : *QuiteRSS*, *Fluent Reader*, *Feedbro*
-
----
-
-# 🧗 Difficultés rencontrées
+### Clients (WIN01 et UBU01)
+- **Windows :** Fluent Reader  
+- **Ubuntu :** NewsFlash  
+- Test de la connexion directe au serveur FreshRSS via `/api/greader.php`  
 
 ---
 
-# 💡 Solutions trouvées
+# Difficultés rencontrées
+
+### Côté Windows FreshRSS
+- Mauvaise lecture des flux RSS au départ (erreur cURL).  
+- API Google Reader non activée (empêchait la synchronisation avec NewsFlash).  
+
+### Côté Debian TT_RSS
+- Problème : DNS Résolution réseau
+- Erreur **PDO** lors de l’installation (connexion SQL échouée).
+- Dépendances PHP manquantes (`php-xml`, `php-intl`, `php-curl`).  
+- Blocages prolongés sans test sur un autre environnement (Ubuntu).  
+- Nouvelle version de TT-RSS n’est pas compatible avec MariaDB/MySQL → passage vers **PostgreSQL
+
+### Côté clients (UBU01)
+- Aucune connexion entre Fluent Reader et FreshRSS.  
+- Problème de reconnaissance Unicode UTF-8 avec Fluent Reader.  
 
 ---
 
-# 🚀 Améliorations possibles
+# Solutions trouvées
+
+| Problème | Solution mise en place |
+|-----------|-----------------------|
+| Problème  DNS  | Édition de `/etc/resolv.conf` pour ajouter des serveurs DNS valides |
+| Erreur PDO sur Debian | Installation des modules PHP manquants et mise en place d’une autre base de données PostgreSQL |
+| API FreshRSS inactive | Activation manuelle de “l’API Google Reader” dans les paramètres |
+| Flux RSS — erreur cURL | Installation du fichier `cacert.pem` manquant dans le dossier `C:/wamp64/bin/php/php8.3.14/extras/ssl/` |
+| Blocages techniques prolongés | Échange des rôles entre les membres pour croiser les compétences |
+
+---
+
+# Améliorations possibles
+
+- Conteneuriser FreshRSS et TT_RSS avec Docker.  
+- Centraliser les flux sur un seul serveur mutualisé.  
+- ...
