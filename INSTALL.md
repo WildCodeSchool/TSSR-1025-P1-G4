@@ -43,8 +43,7 @@
 - Visual C++
 - ... 
 
---------
---------
+-------
 
 # 2. Installation sur le serveur Windows (FreshRSS)
 
@@ -605,98 +604,6 @@ L’URL doit pointer vers **l’API Google Reader** (`/api/greader.php`) et non 
 ✅ Si ces deux vérifications fonctionnent, la synchronisation entre le client et le serveur est opérationnelle.
 
 --------
---------
-
-### 4.1.2 NewsFlash sur Ubuntu
-
-#### Présentation
-**NewsFlash** est un lecteur RSS pour Linux qui permet de centraliser vos flux d’actualités,  
-et surtout de se synchroniser directement avec un serveur **FreshRSS**.  
-C’est une solution simple, graphique et rapide pour consulter vos flux RSS depuis le client **UBU01**.
-
---------
-
-#### Étape 1. Pré-requis
-
-Avant de commencer, assurez-vous que :
-- Votre poste **Ubuntu (UBU01)** dispose d’un accès Internet.
-- Votre serveur **FreshRSS** est déjà installé et fonctionnel (ex. `http://[ADRESSE_IP_SERVEUR]/freshrss`).
-- Vous connaissez vos identifiants de connexion FreshRSS :
-  - Nom d’utilisateur  
-  - Mot de passe  
-
---------
-
-#### Étape 2. Ouvrir le **Centre d’applications Ubuntu**
-
-1. Cliquez sur l’icône **“Centre d’applications”** (sac orange dans la barre de gauche).  
-![1_store_ubuntu](https://github.com/WildCodeSchool/TSSR-1025-P1-G4/blob/main/Ressources/installation_newsflash/1_store_ubuntu.png)
-2. Dans la barre de recherche en haut, tapez :  
-3. Sélectionnez **NewsFlash** dans les résultats de recherche.  
-![2_barre_tache](https://github.com/WildCodeSchool/TSSR-1025-P1-G4/blob/main/Ressources/installation_newsflash/2_barre_tache.png)
-
---------
-
-#### Étape 3. Installation de NewsFlash
-
-1. Cliquez sur le bouton **“Installer”**.  
-![3_newsflash_store](https://github.com/WildCodeSchool/TSSR-1025-P1-G4/blob/main/Ressources/installation_newsflash/3_newsflash_store.png)
-2. Patientez le temps que l’installation se termine (quelques secondes).  
-3. Une fois terminée, le bouton devient **“Ouvrir”**.  
-4. Cliquez dessus pour lancer directement l’application.
-
---------
-
-#### Étape 4. Première ouverture de NewsFlash
-
-1. Lors du premier lancement, NewsFlash vous demande de **choisir une source de flux RSS**.  
-![4_newsflash_servicerss](https://github.com/WildCodeSchool/TSSR-1025-P1-G4/blob/main/Ressources/installation_newsflash/4_newsflash_servicerss.png)
-2. Cliquez sur le bouton **“Add Account”** (ou “Ajouter un service”).  
-3. Une liste de services compatibles s’affiche.
-
---------
-
-#### Étape 5. Connexion à votre serveur FreshRSS
-
-1. Sélectionnez **FreshRSS** dans la liste des services.  
-![5_connection_freshrss](https://github.com/WildCodeSchool/TSSR-1025-P1-G4/blob/main/Ressources/installation_newsflash/5_connection_freshrss.png)
-2. Renseignez les champs de connexion :
-- **Nom d’affichage :** le nom du compte local (ex. *Serveur FreshRSS*).  
-- **URL du serveur :** l’adresse complète du service (ex. `http://[ADRESSE_IP_SERVEUR]/freshrss/api/greader.php`).  
-- **Nom d’utilisateur :** votre identifiant FreshRSS.  
-- **Mot de passe :** votre mot de passe FreshRSS.
-3. Cliquez sur **“Connect”**.  
-![6_parametre_connection](https://github.com/WildCodeSchool/TSSR-1025-P1-G4/blob/main/Ressources/installation_newsflash/6_parametre_connection.png)
-4. NewsFlash vérifie la connexion et importe automatiquement vos flux et dossiers depuis le serveur.
-
-*Important :*  
-L’URL doit pointer vers **l’API Google Reader** de FreshRSS (`/api/greader.php`), sinon la synchronisation échouera.
-
---------
-
-#### Étape 6. Consultation de vos flux RSS
-
-1. Une fois connecté, la fenêtre principale s’affiche avec :
-- Vos flux RSS importés depuis FreshRSS dans la colonne de gauche.  
-- Les articles au centre.  
-- Le contenu de l’article sélectionné à droite.  
-
-2. Cliquez sur un flux pour afficher les articles récents.  
-3. Les articles lus sont automatiquement marqués comme **lus** dans FreshRSS.
-
-*Synchronisation :*  
-Toute action effectuée dans NewsFlash (lecture, marquage, suppression) se synchronise automatiquement avec le serveur FreshRSS.
-
---------
-
-#### Étape 7. Rafraîchir les flux
-
-1. Cliquez sur le bouton **🔄 Actualiser** dans la barre supérieure.  
-2. Les nouveaux articles apparaissent immédiatement.  
-3. Vous pouvez aussi activer la mise à jour automatique dans :
-
---------
---------
 
 ## 4.2 Pour Tiny Tiny RSS
 
@@ -706,7 +613,8 @@ Toute action effectuée dans NewsFlash (lecture, marquage, suppression) se synch
 - allez sur votre navigateur et rentré :
 ``` https://github.com/martinrotter/rssguard/releases/tag/devbuild5 ```
 - Télécharger la version : ```rssguard-devbuild5-4ba218470-qt6-win10.exe```
-
+  
+![store_ubuntu](https://github.com/WildCodeSchool/TSSR-1025-P1-G4/blob/main/Ressources/installation_rss_guard/1_store_ubuntu.png)
 #### Étape 2. Installation RSS GUARD
 - Une fois téléchargé installer le en double cliquant sur le fichier fraichement téléchargé :
 ```rssguard-devbuild5-4ba218470-qt6-win10.exe```
@@ -715,7 +623,9 @@ Toute action effectuée dans NewsFlash (lecture, marquage, suppression) se synch
 - Lancer le logiciel
 - Une fois lancer il vous demandera de choisir un flux API
 
-![2_choix_du_flux](https://github.com/WildCodeSchool/TSSR-1025-P1-G4/blob/main/Ressources/installation_rssguard/2_choix_du_flux.png)
+![2_choix_du_flux](https://github.com/WildCodeSchool/TSSR-1025-P1-G4/blob/main/Ressources/installation_rss_guard/2_choix_du_flux.png)
+
+![2_choix_du_flux2](https://github.com/WildCodeSchool/TSSR-1025-P1-G4/blob/main/Ressources/installation_rss_guard/2_choix_du_flux_2.png)
 - Choisissez Tiny Tiny RSS
 - Rentrez les informations suivantes :
 
@@ -725,13 +635,13 @@ Toute action effectuée dans NewsFlash (lecture, marquage, suppression) se synch
 | Nom d'utilisateur            | admin      |
 | Mot de passe       | votre mot de passe   |
 
-![3_configuration_du_flux](https://github.com/WildCodeSchool/TSSR-1025-P1-G4/blob/main/Ressources/installation_rssguard/3_configuration_du_flux.png)
+![3_configuration_du_flux](https://github.com/WildCodeSchool/TSSR-1025-P1-G4/blob/main/Ressources/installation_rss_guard/3_configuration_du_flux.png)
 
 #### Étape 4. Valider les API sur TTRSS
 - Aller sur la page web de TTRSS : ````http://172.16.10.6/```
 - Ouvrer le panneau de configuration 
 
-![4_validation_api_dans_ttrss](https://github.com/WildCodeSchool/TSSR-1025-P1-G4/blob/main/Ressources/installation_rssguard/4_validation_api_dans_ttrss.png)
+![4_validation_api_dans_ttrss](https://github.com/WildCodeSchool/TSSR-1025-P1-G4/blob/main/Ressources/installation_rss_guard/4_validation_api_dans_ttrss.png)
 - Cocher la case : ```Activer l'API```
 
 #### Étape 5. Charger le flux TTRSS sur RSS GUARD
@@ -739,61 +649,15 @@ Toute action effectuée dans NewsFlash (lecture, marquage, suppression) se synch
 - Puis ```admin (Tiny Tiny RSS)``` 
 - Et enfin ```Synchronised folders & Others items```
 
-![5_mise_a_jour_flux_ttrss](https://github.com/WildCodeSchool/TSSR-1025-P1-G4/blob/main/Ressources/installation_rssguard/5_mise_a_jour_flux_ttrss.png)
+![5_mise_a_jour_flux_ttrss](https://github.com/WildCodeSchool/TSSR-1025-P1-G4/blob/main/Ressources/installation_rss_guard/5_mise_a_jour_flux_ttrss.png)
 
 - Ensuite aller dans l'onglet ```Feeds```
 - Puis ```Fetch All```
 
-![6_fetch_all](https://github.com/WildCodeSchool/TSSR-1025-P1-G4/blob/main/Ressources/installation_rssguard/6_fetch_all.png)
+![6_fetch_all](https://github.com/WildCodeSchool/TSSR-1025-P1-G4/blob/main/Ressources/installation_rss_guard/6_fetch_all.png)
 
 **Les flux TTRSS sont normalement à jour et consultable.**
 
-### 4.2.2 RSS GUARD sur Ubuntu
-#### Étape 1. Téléchargement RSS GUARD
-- allez sur le store de linux
-- rechercher RSS GUARD, dans la barre de recherche
-- Installer RSS GUARD
-
-![1_store_ubuntu](https://github.com/WildCodeSchool/TSSR-1025-P1-G4/blob/main/Ressources/installation_rssguard/1_store_ubuntu.png)
-
-#### Étape 2. Lancement RSS GUARD
-- Lancer le logiciel
-- Une fois lancer il vous demandera de choisir un flux API
-
-![2_choix_du_flux](https://github.com/WildCodeSchool/TSSR-1025-P1-G4/blob/main/Ressources/installation_rssguard/2_choix_du_flux.png)
-- Choisissez Tiny Tiny RSS
-- Rentrez les informations suivantes :
-
-| Champ              | Valeur             |
-| ------------------ | ------------------ |
-| URL   | http://172.16.10.6/api/           |
-| Nom d'utilisateur            | admin      |
-| Mot de passe       | votre mot de passe   |
-
-![3_configuration_du_flux](https://github.com/WildCodeSchool/TSSR-1025-P1-G4/blob/main/Ressources/installation_rssguard/3_configuration_du_flux.png)
-
-#### Étape 3. Valider les API sur TTRSS
-- Aller sur la page web de TTRSS : ````http://172.16.10.6/```
-- Ouvrer le panneau de configuration 
-
-![4_validation_api_dans_ttrss](https://github.com/WildCodeSchool/TSSR-1025-P1-G4/blob/main/Ressources/installation_rssguard/4_validation_api_dans_ttrss.png)
-- Cocher la case : ```Activer l'API```
-
-#### Étape 4. Charger le flux TTRSS sur RSS GUARD
-- Dans l'application RSS GUARD, cliquez sur l'onglet : ```Comptes``` 
-- Puis ```admin (Tiny Tiny RSS)``` 
-- Et enfin ```Synchronised folders & Others items```
-
-![5_mise_a_jour_flux_ttrss](https://github.com/WildCodeSchool/TSSR-1025-P1-G4/blob/main/Ressources/installation_rssguard/5_mise_a_jour_flux_ttrss.png)
-
-- Ensuite aller dans l'onglet ```Feeds```
-- Puis ```Fetch All```
-
-![6_fetch_all](https://github.com/WildCodeSchool/TSSR-1025-P1-G4/blob/main/Ressources/installation_rssguard/6_fetch_all.png)
-
-**Les flux TTRSS sont normalement à jour et consultable.**
-
---------
 --------
 
 # 5. Automatisation de la mise à jour
