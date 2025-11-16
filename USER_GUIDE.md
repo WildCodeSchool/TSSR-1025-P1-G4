@@ -58,16 +58,18 @@ Sur Les poste clients **Windows (Fluent Reader)** et **Ubuntu (NewsFlash)** perm
 1.1 Ouvrez **Fluent Reader** depuis le menu Démarrer.  
 1.2 Allez dans **Settings → Accounts → Add Account**.  
 1.3 Choisissez **Google Reader API**.  
- **SCREEN**
+![6_api_parametrage](https://github.com/WildCodeSchool/TSSR-1025-P1-G4/blob/main/Ressources/installation_fluentreader/6_api_parametrage.png)
  
 1.4 Remplissez les champs :
    - **Nom d’affichage :** Serveur FreshRSS  
    - **URL du serveur :** `http://172.16.10.5/freshrss/api/greader.php`  
    - **Nom d’utilisateur :** admin  
    - **Mot de passe :** (mot de passe FreshRSS)
+
+![7_api_connectes](https://github.com/WildCodeSchool/TSSR-1025-P1-G4/blob/main/Ressources/installation_fluentreader/7_api_connectes.png)
 1.5 Cliquez sur **Connect**.  
 1.6 Vos flux apparaissent automatiquement dans la colonne de gauche.  
-   **SCREEN**
+
 
 ---
 
@@ -76,16 +78,18 @@ Sur Les poste clients **Windows (Fluent Reader)** et **Ubuntu (NewsFlash)** perm
 1.1 Lancez **NewsFlash** depuis le menu Applications.  
 1.2 Sur la page d’accueil, cliquez sur **Add Account**.  
 1.3 Sélectionnez **FreshRSS**.    
-   **SCREEN**
+ ![4_newsflash_servicerss](https://github.com/WildCodeSchool/TSSR-1025-P1-G4/blob/main/Ressources/installation_newsflash/4_newsflash_servicerss.png)
    
 1.4 Renseignez :
    - **Nom d’affichage :** Serveur FreshRSS  
    - **URL du serveur :** `http://172.16.10.5/freshrss/api/greader.php`  
    - **Nom d’utilisateur :** admin  
    - **Mot de passe :** (mot de passe FreshRSS)
+
+ ![6_parametre_connection](https://github.com/WildCodeSchool/TSSR-1025-P1-G4/blob/main/Ressources/installation_newsflash/6_parametre_connection.png)
 1.5 Cliquez sur **Connect**.  
 1.6 Les flux se synchronisent automatiquement.  
-   **SCREEN**
+
 
 # 2. Utilisation avancée (règles, filtres, étiquettes)
 ###  Étapes 1:
