@@ -1,5 +1,5 @@
 
-# INSTALLATION — Projet 1 : Service d’Agrégation de Flux RSS
+# INSTALLATION - Projet 1 : Service d’Agrégation de Flux RSS
 
 ## Sommaire
 
