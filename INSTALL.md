@@ -728,7 +728,7 @@ Toute action effectuée dans NewsFlash (lecture, marquage, suppression) se synch
 ![3_configuration_du_flux](https://github.com/WildCodeSchool/TSSR-1025-P1-G4/blob/main/Ressources/installation_rss_guard/3_configuration_du_flux.png)
 
 #### Étape 4. Valider les API sur TTRSS
-- Aller sur la page web de TTRSS : ````http://172.16.10.6/```
+- Aller sur la page web de TTRSS : ```http://172.16.10.6/```
 - Ouvrer le panneau de configuration 
 
 ![4_validation_api_dans_ttrss](https://github.com/WildCodeSchool/TSSR-1025-P1-G4/blob/main/Ressources/installation_rss_guard/4_validation_api_dans_ttrss.png)
