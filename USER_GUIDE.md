@@ -28,7 +28,6 @@ Une fois connecté, vous accédez :
 - et à la zone de lecture à droite.    
 **SCREEN**
   
-## Se connecter à Tiny Tiny RSS (serveur Linux Debian)  
 ## Se connecter à Tiny Tiny RSS  
 ###  Adresse d’accès :  
 http://172.16.10.6 
