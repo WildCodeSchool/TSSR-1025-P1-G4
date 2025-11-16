@@ -624,17 +624,17 @@ Avant de commencer, assurez-vous que :
 ### Étape 2. Ouvrir le **Centre d’applications Ubuntu**
 
 1. Cliquez sur l’icône **“Centre d’applications”** (sac orange dans la barre de gauche).  
-   **SCREEN**
+![1_store_ubuntu](https://github.com/WildCodeSchool/TSSR-1025-P1-G4/blob/main/Ressources/installation_newsflash/1_store_ubuntu.png)
 2. Dans la barre de recherche en haut, tapez :  
 3. Sélectionnez **NewsFlash** dans les résultats de recherche.  
-**SCREEN**
+![2_barre_tache](https://github.com/WildCodeSchool/TSSR-1025-P1-G4/blob/main/Ressources/installation_newsflash/2_barre_tache.png)
 
 --------
 
 ### Étape 3. Installation de NewsFlash
 
 1. Cliquez sur le bouton **“Installer”**.  
-**SCREEN**
+![3_newsflash_store](https://github.com/WildCodeSchool/TSSR-1025-P1-G4/blob/main/Ressources/installation_newsflash/3_newsflash_store.png)
 2. Patientez le temps que l’installation se termine (quelques secondes).  
 3. Une fois terminée, le bouton devient **“Ouvrir”**.  
 4. Cliquez dessus pour lancer directement l’application.
@@ -644,7 +644,7 @@ Avant de commencer, assurez-vous que :
 ### Étape 4. Première ouverture de NewsFlash
 
 1. Lors du premier lancement, NewsFlash vous demande de **choisir une source de flux RSS**.  
-**SCREEN**
+![4_newsflash_servicerss](https://github.com/WildCodeSchool/TSSR-1025-P1-G4/blob/main/Ressources/installation_newsflash/4_newsflash_servicerss.png)
 2. Cliquez sur le bouton **“Add Account”** (ou “Ajouter un service”).  
 3. Une liste de services compatibles s’affiche.
 
@@ -653,14 +653,14 @@ Avant de commencer, assurez-vous que :
 ### Étape 5. Connexion à votre serveur FreshRSS
 
 1. Sélectionnez **FreshRSS** dans la liste des services.  
-**SCREEN**
+![5_connection_freshrss](https://github.com/WildCodeSchool/TSSR-1025-P1-G4/blob/main/Ressources/installation_newsflash/5_connection_freshrss.png)
 2. Renseignez les champs de connexion :
 - **Nom d’affichage :** le nom du compte local (ex. *Serveur FreshRSS*).  
 - **URL du serveur :** l’adresse complète du service (ex. `http://[ADRESSE_IP_SERVEUR]/freshrss/api/greader.php`).  
 - **Nom d’utilisateur :** votre identifiant FreshRSS.  
 - **Mot de passe :** votre mot de passe FreshRSS.
 3. Cliquez sur **“Connect”**.  
-**SCREEN**
+![6_parametre_connection](https://github.com/WildCodeSchool/TSSR-1025-P1-G4/blob/main/Ressources/installation_newsflash/6_parametre_connection.png)
 4. NewsFlash vérifie la connexion et importe automatiquement vos flux et dossiers depuis le serveur.
 
 *Important :*  
@@ -674,7 +674,6 @@ L’URL doit pointer vers **l’API Google Reader** de FreshRSS (`/api/greader.p
 - Vos flux RSS importés depuis FreshRSS dans la colonne de gauche.  
 - Les articles au centre.  
 - Le contenu de l’article sélectionné à droite.  
-**SCREEN**
 
 2. Cliquez sur un flux pour afficher les articles récents.  
 3. Les articles lus sont automatiquement marqués comme **lus** dans FreshRSS.
@@ -702,16 +701,19 @@ Ainsi, les utilisateurs des clients (FluentReader, NewsFlash, etc) reçoivent to
 ## Sur Windows (FreshRSS)
 ### Étape 1. Ouvrir le planificateur de tâches
 - Dans la barre de recherche Windows, tapez 'planificateur de tâches'.
+- Puis dans Tools, cliquez sur Task Scheduler
+![1_server_manager](https://github.com/WildCodeSchool/TSSR-1025-P1-G4/blob/main/Ressources/automatisation_mise_a_jour/1_server_manager.png)
 - Cliquez sur **Créer une tâche** dans le menu à droite
+![2_task_scheduler](https://github.com/WildCodeSchool/TSSR-1025-P1-G4/blob/main/Ressources/automatisation_mise_a_jour/2_task_scheduler.png)
 
-![1_server_manager](https://github.com/WildCodeSchool/TSSR-1025-P1-G4/blob/main/Ressources/automatisation_mise_a_jour/1_server_manager)
 
 --------
 
 ### Étape 2. Nommer la tâche
 - Nom : 'Mise à Jour FreshRSS'
 - Description (optionnelle) : Actualise les flux RSS toutes les 30 minutes sur le serveur.*
-**SCREEN**
+![3_create_task](https://github.com/WildCodeSchool/TSSR-1025-P1-G4/blob/main/Ressources/automatisation_mise_a_jour/3_create_task.png)
+
 
 --------
 
@@ -720,7 +722,7 @@ Ainsi, les utilisateurs des clients (FluentReader, NewsFlash, etc) reçoivent to
 - Sélectinnez ** Débuter la tâche : selon le calendrier**
 - Répétez la tâche **toutes les 30 minutes**
 - Cliquez sur **OK**
-**SCREEN**
+![4_new_trigger](https://github.com/WildCodeSchool/TSSR-1025-P1-G4/blob/main/Ressources/automatisation_mise_a_jour/4_new_trigger.png)
 
 --------
 
@@ -732,14 +734,14 @@ Ainsi, les utilisateurs des clients (FluentReader, NewsFlash, etc) reçoivent to
 - Dans **Ajouter des arguments**, saisissez :
   ```C:\wamp64\www\freshrss\app\actualize_script.php```
 - Cliquez sur **ok**
-**SCREEN**
+![5_nex_action](https://github.com/WildCodeSchool/TSSR-1025-P1-G4/blob/main/Ressources/automatisation_mise_a_jour/5_nex_action.png)
 
 --------
 
 ### Étape 5. Définir les conditions
 - Onglet **Conditions**, décochez **Exécuter la tâche uniquement si l’ordinateur est sur le secteur** (si besoin)  
 - Onglet **Paramètres**, cochez **Exécuter la tâche dès que possible après un démarrage manqué**  
-**SCREEN**
+![6_create_task](https://github.com/WildCodeSchool/TSSR-1025-P1-G4/blob/main/Ressources/automatisation_mise_a_jour/6_create_task.png)
 
 --------
 
@@ -751,8 +753,6 @@ Ainsi, les utilisateurs des clients (FluentReader, NewsFlash, etc) reçoivent to
 
 ### Étape 7. Vérification
 - Connectez-vous à FreshRSS, ouvrez un flux, vérifiez la date de dernière mise à jour.
-- Vous pouvez aussi vérifier les logs dans :
-     ```C:\wamp64\www\freshrss\data\log\```
 **Les flux sont désormais actualisés automatiquement toutes les 30 minutes sur le serveur Windows.**
 
 --------
