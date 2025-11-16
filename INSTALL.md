@@ -613,8 +613,7 @@ L’URL doit pointer vers **l’API Google Reader** (`/api/greader.php`) et non 
 - allez sur votre navigateur et rentré :
 ``` https://github.com/martinrotter/rssguard/releases/tag/devbuild5 ```
 - Télécharger la version : ```rssguard-devbuild5-4ba218470-qt6-win10.exe```
-  
-![store_ubuntu](https://github.com/WildCodeSchool/TSSR-1025-P1-G4/blob/main/Ressources/installation_rss_guard/1_store_ubuntu.png)
+
 #### Étape 2. Installation RSS GUARD
 - Une fois téléchargé installer le en double cliquant sur le fichier fraichement téléchargé :
 ```rssguard-devbuild5-4ba218470-qt6-win10.exe```
@@ -658,6 +657,53 @@ L’URL doit pointer vers **l’API Google Reader** (`/api/greader.php`) et non 
 
 **Les flux TTRSS sont normalement à jour et consultable.**
 
+--------
+
+### 4.2.2 RSS GUARD sur Ubuntu
+#### Étape 1. Téléchargement RSS GUARD
+- allez sur le store de linux
+- rechercher RSS GUARD, dans la barre de recherche
+- Installer RSS GUARD
+
+![1_store_ubuntu](https://github.com/WildCodeSchool/TSSR-1025-P1-G4/blob/main/Ressources/installation_rssguard/1_store_ubuntu.png)
+
+#### Étape 2. Lancement RSS GUARD
+- Lancer le logiciel
+- Une fois lancer il vous demandera de choisir un flux API
+
+![2_choix_du_flux](https://github.com/WildCodeSchool/TSSR-1025-P1-G4/blob/main/Ressources/installation_rssguard/2_choix_du_flux.png)
+- Choisissez Tiny Tiny RSS
+- Rentrez les informations suivantes :
+
+| Champ              | Valeur             |
+| ------------------ | ------------------ |
+| URL   | http://172.16.10.6/api/           |
+| Nom d'utilisateur            | admin      |
+| Mot de passe       | votre mot de passe   |
+
+![3_configuration_du_flux](https://github.com/WildCodeSchool/TSSR-1025-P1-G4/blob/main/Ressources/installation_rssguard/3_configuration_du_flux.png)
+
+#### Étape 3. Valider les API sur TTRSS
+- Aller sur la page web de TTRSS : ````http://172.16.10.6/```
+- Ouvrer le panneau de configuration 
+
+![4_validation_api_dans_ttrss](https://github.com/WildCodeSchool/TSSR-1025-P1-G4/blob/main/Ressources/installation_rssguard/4_validation_api_dans_ttrss.png)
+- Cocher la case : ```Activer l'API```
+
+#### Étape 4. Charger le flux TTRSS sur RSS GUARD
+- Dans l'application RSS GUARD, cliquez sur l'onglet : ```Comptes``` 
+- Puis ```admin (Tiny Tiny RSS)``` 
+- Et enfin ```Synchronised folders & Others items```
+
+![5_mise_a_jour_flux_ttrss](https://github.com/WildCodeSchool/TSSR-1025-P1-G4/blob/main/Ressources/installation_rssguard/5_mise_a_jour_flux_ttrss.png)
+
+- Ensuite aller dans l'onglet ```Feeds```
+- Puis ```Fetch All```
+
+![6_fetch_all](https://github.com/WildCodeSchool/TSSR-1025-P1-G4/blob/main/Ressources/installation_rssguard/6_fetch_all.png)
+
+**Les flux TTRSS sont normalement à jour et consultable.**
+--------
 --------
 
 # 5. Automatisation de la mise à jour
