@@ -1,23 +1,115 @@
-# 📘 GUIDE UTILISATEUR — Projet 1 : Service d’Agrégation de Flux RSS
+
+# GUIDE UTILISATEUR Projet 1 : Service d’Agrégation de Flux RSS
 
 ## Sommaire
 
 1. [Connexion et utilisation de base](#1-connexion-et-utilisation-de-base)
 2. [Utilisation avancée (règles, filtres, étiquettes)](#2-utilisation-avancée-règles-filtres-étiquettes)
-3. [Automatisation de la mise à jour](#3-automatisation-de-la-mise-à-jour)
-4. [FAQ / Problèmes fréquents](#4-faq--problèmes-fréquents)
-5. [Astuces et bonnes pratiques](#5-astuces-et-bonnes-pratiques)
+3. [FAQ Problèmes fréquents](#3-faq-problèmes-fréquents)
+4. [Astuces et bonnes pratiques](#4-astuces-et-bonnes-pratiques)
 
-# 1. Connexion et utilisation de base
+# 1. Connexion et utilisation de base  
+## Se connecter à FreshRSS
+###  Adresse d’accès :
+http://172.16.10.5/freshrss/
+###  Étapes 1:
+1.1 Ouvrir un navigateur web (Edge, Firefox ou Chrome).  
+1.2 Entrer l’adresse du serveur FreshRSS ci-dessus.  
+1.3 L’écran d’accueil de FreshRSS s’affiche.  
+   **SCREEN**
+1.3 Saisir vos identifiants :
+   - **Nom d’utilisateur :** admin  
+   - **Mot de passe :** (fourni par l’administrateur)
+1.5 Cliquer sur **Connexion**.  
+### Interface principale :
+Une fois connecté, vous accédez :
+- à la liste des flux RSS dans la colonne de gauche,  
+- au nombre d’articles non lus,  
+- et à la zone de lecture à droite.    
+**SCREEN**
+  
+## Se connecter à Tiny Tiny RSS (serveur Linux Debian)  
+## Se connecter à Tiny Tiny RSS  
+###  Adresse d’accès :  
+http://172.16.10.6 
+###  Étapes 1:
+1.1 Aller dans navigateur (sur poste client)
+1.2 Ouvrir un navigateur web (Edge, Firefox ou Chrome).
+1.3 la page d’authentification apparaît
+1.4 Entrer l’adresse du serveur Tiny Tiny RSS ci-dessus.  
+1.5 L’écran d’accueil de FreshRSS s’affiche.  
+   **SCREEN**
+1.6 Saisir vos identifiants :  
+   - **Nom d’utilisateur :** admin    
+   - **Mot de passe :** (fourni par l’administrateur)
+### Interface principale :
+Une fois connecté, vous accédez :
+- à la liste des flux RSS dans la colonne de gauche, 
+- au nombre d’articles non lus,  
+- et à la zone de lecture à droite.
 
-## 1.1 Se connecter à FreshRSS (serveur Windows)
-## 1.2 Se connecter à Tiny Tiny RSS (serveur Linux)
-## 1.3 Ajouter un nouveau flux RSS
+----
+
+## 1.3 Ajouter le flux FreshRSS sur FluentReader et NewsFlash
+Sur Les poste clients **Windows (Fluent Reader)** et **Ubuntu (NewsFlash)** permettent de consulter les flux à distance via l’API Google Reader.
+
+### Sous Windows Fluent Reader
+
+###  Étapes 1:
+1.1 Ouvrez **Fluent Reader** depuis le menu Démarrer.  
+1.2 Allez dans **Settings → Accounts → Add Account**.  
+1.3 Choisissez **Google Reader API**.  
+ **SCREEN**
+ 
+1.4 Remplissez les champs :
+   - **Nom d’affichage :** Serveur FreshRSS  
+   - **URL du serveur :** `http://172.16.10.5/freshrss/api/greader.php`  
+   - **Nom d’utilisateur :** admin  
+   - **Mot de passe :** (mot de passe FreshRSS)
+1.5 Cliquez sur **Connect**.  
+1.6 Vos flux apparaissent automatiquement dans la colonne de gauche.  
+   **SCREEN**
+
+---
+
+### Sous Ubuntu NewsFlash
+###  Étapes 1:
+1.1 Lancez **NewsFlash** depuis le menu Applications.  
+1.2 Sur la page d’accueil, cliquez sur **Add Account**.  
+1.3 Sélectionnez **FreshRSS**.    
+   **SCREEN**
+   
+1.4 Renseignez :
+   - **Nom d’affichage :** Serveur FreshRSS  
+   - **URL du serveur :** `http://172.16.10.5/freshrss/api/greader.php`  
+   - **Nom d’utilisateur :** admin  
+   - **Mot de passe :** (mot de passe FreshRSS)
+1.5 Cliquez sur **Connect**.  
+1.6 Les flux se synchronisent automatiquement.  
+   **SCREEN**
 
 # 2. Utilisation avancée (règles, filtres, étiquettes)
+###  Étapes 1:
+1.1 Depuis FreshRSS, ouvrez le menu **Catégories**.  
+1.2 Cliquez sur **+ Ajouter une catégorie**.  
+1.3 Entrez un nom (ex. *Veille Tech*, *Cybersécurité*).  
+1.4 Glissez les flux souhaités dans la catégorie correspondante.  
+   **SCREEN**
 
-# 3. Automatisation de la mise à jour
+Les catégories sont synchronisées automatiquement avec vos clients.
 
-# 4. FAQ / Problèmes fréquents
+-----
 
-# 5. Astuces et bonnes pratiques
+# 3. FAQ Problèmes fréquents
+
+| Problème                                    | Cause probable                     | Solution                                                 |
+| ------------------------------------------- | ---------------------------------- | -------------------------------------------------------- |
+| Erreur cURL 60 lors de l’ajout de flux      | Certificats SSL manquants          | Télécharger `cacert.pem` et le déclarer dans `php.ini`   |
+| Impossible de se connecter au flux de FreshRSS | API Google Reader désactivée       | Activer l’API dans les paramètres FreshRSS               |
+| Connection refused sur Fluent Reader      | Carte réseau désactivée sur la VM  | Réactiver la connexion dans les paramètres réseau Ubuntu |                  |
+| Erreur PDO sur Debian                       | Modules PHP manquants              | Installer `php-xml`, `php-intl`, `php-curl`              |
+
+# 4. Astuces et bonnes pratiques
+- Créez des catégories claires pour vos flux (Tech, Cyber, Réseaux…).
+- Testez chaque flux dans un navigateur avant de l’ajouter.
+
