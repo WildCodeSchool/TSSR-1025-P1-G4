@@ -283,8 +283,8 @@ Placez le fichier dans :
 	→ Copiez le chemin indiqué (souvent dans `apache/bin/php.ini`).
 3. Ouvrez ce fichier avec le Bloc-notes.
 4. Ajoutez à la fin :
-	```curl.cainfo = "C:/wamp64/bin/php/php8.3.14/extras/ssl/cacert.pem"```
-	```openssl.cafile = "C:/wamp64/bin/php/php8.3.14/extras/ssl/cacert.pem"```
+```curl.cainfo = "C:/wamp64/bin/php/php8.3.14/extras/ssl/cacert.pem"```
+```openssl.cafile = "C:/wamp64/bin/php/php8.3.14/extras/ssl/cacert.pem"```
 5. Enregistrez, puis redémarrez Apache :
 	WAMP → Apache → **Restart Service**
 
