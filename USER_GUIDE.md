@@ -37,7 +37,7 @@ http://172.16.10.6
 1.3 la page d’authentification apparaît
 1.4 Entrer l’adresse du serveur Tiny Tiny RSS ci-dessus.  
 1.5 L’écran d’accueil de FreshRSS s’affiche.  
-  ! [page_connect_ttrss(https://github.com/WildCodeSchool/TSSR-1025-P1-G4/blob/main/Ressources/autres/configuration%20page%20ttrss.jpg)
+  ![page_connect_ttrss](https://github.com/WildCodeSchool/TSSR-1025-P1-G4/blob/main/Ressources/autres/configuration%20page%20ttrss.jpg)
 1.6 Saisir vos identifiants :  
    - **Nom d’utilisateur :** admin    
    - **Mot de passe :** (fourni par l’administrateur)
