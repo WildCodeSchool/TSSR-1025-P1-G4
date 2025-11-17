@@ -328,7 +328,8 @@ FreshRSS peut maintenant ajouter des flux HTTPS sans erreur.
 	5. Cliquer sur Add
 ### 8.3 Si le flux refuse d'être ajouté  
 	Essayer la version forcée du flux :  
-	https://feeds.bbci.co.uk/news/rss.xml#force_feed
+	https://feeds.bbci.co.uk/news/rss.xml#force_feed  
+![adding_flux](https://github.com/WildCodeSchool/TSSR-1025-P1-G4/blob/main/Ressources/autres/ajoute_flux_freshrss.png)
 	
 ## Étape 9. Vérification finale    
 	- WAMP : icône verte ✅  
