@@ -16,7 +16,7 @@ http://172.16.10.5/freshrss/
 1.1 Ouvrir un navigateur web (Edge, Firefox ou Chrome).  
 1.2 Entrer l’adresse du serveur FreshRSS ci-dessus.  
 1.3 L’écran d’accueil de FreshRSS s’affiche.  
-   **SCREEN**
+![page_conect_freshrss](https://github.com/WildCodeSchool/TSSR-1025-P1-G4/blob/main/Ressources/autres/page_conect_freshrss.png)
 1.4 Saisir vos identifiants :
    - **Nom d’utilisateur :** admin  
    - **Mot de passe :** (fourni par l’administrateur)
@@ -26,7 +26,7 @@ Une fois connecté, vous accédez :
 - à la liste des flux RSS dans la colonne de gauche,  
 - au nombre d’articles non lus,  
 - et à la zone de lecture à droite.    
-**SCREEN**
+![page_conect_freshrss_flux](https://github.com/WildCodeSchool/TSSR-1025-P1-G4/blob/main/Ressources/autres/page_freshrss.png)
   
 ## Se connecter à Tiny Tiny RSS  
 ###  Adresse d’accès :  
@@ -37,7 +37,7 @@ http://172.16.10.6
 1.3 la page d’authentification apparaît
 1.4 Entrer l’adresse du serveur Tiny Tiny RSS ci-dessus.  
 1.5 L’écran d’accueil de FreshRSS s’affiche.  
-   **SCREEN**
+  ! [page_connect_ttrss(https://github.com/WildCodeSchool/TSSR-1025-P1-G4/blob/main/Ressources/autres/configuration%20page%20ttrss.jpg)
 1.6 Saisir vos identifiants :  
    - **Nom d’utilisateur :** admin    
    - **Mot de passe :** (fourni par l’administrateur)
@@ -97,7 +97,7 @@ Sur Les poste clients **Windows (Fluent Reader)** et **Ubuntu (NewsFlash)** perm
 1.2 Cliquez sur **+ Ajouter une catégorie**.  
 1.3 Entrez un nom (ex. *Veille Tech*, *Cybersécurité*).  
 1.4 Glissez les flux souhaités dans la catégorie correspondante.  
-   **SCREEN**
+
 
 Les catégories sont synchronisées automatiquement avec vos clients.
 
