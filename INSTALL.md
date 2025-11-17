@@ -311,14 +311,31 @@ FreshRSS peut maintenant ajouter des flux HTTPS sans erreur.
 ![1_verification](https://github.com/WildCodeSchool/TSSR-1025-P1-G4/blob/main/Ressources/error_curl/1_verification.png)
 
 --------
-
-## Étape 8. Vérification finale
-
-- WAMP : icône verte ✅  
-- Accès à `http://localhost/freshrss/` ✅  
-- Accès depuis une VM : `http://172.16.10.5/freshrss/` ✅  
-- Ajout de flux HTTPS fonctionnel ✅  
-- Aucun message `cURL error 60` dans les logs ✅  
+## 8.Ajouter une catégorie et un flux dans FreshRSS  
+### 8.1 Ajouter une catégorie 
+	1. Ouvrir FreshRSS :
+	   http://ADRESSE_IP/freshrss 
+	2. Cliquer sur Add
+	3. Cliquer sur Add a category
+	4. Dans le champ Category, entrer le nom de la catégorie (ex : `Actualités`)
+	5. Cliquer sur Add
+### 8.2 Ajouter un flux dans une catégorie
+	1. Cliquer sur Add
+	2. Cliquer sur Add a feed
+	3. Dans Feed URL, entrer l’adresse du flux RSS, par exemple :
+	   https://feeds.bbci.co.uk/news/rss.xml  
+	4. Dans Category, sélectionner la catégorie créée (ex : `Actualités`)  
+	5. Cliquer sur Add
+### 8.3 Si le flux refuse d'être ajouté  
+	Essayer la version forcée du flux :  
+	https://feeds.bbci.co.uk/news/rss.xml#force_feed
+	
+## Étape 9. Vérification finale    
+	- WAMP : icône verte ✅  
+	- Accès à `http://localhost/freshrss/` ✅  
+	- Accès depuis une VM : `http://172.16.10.5/freshrss/` ✅  
+	- Ajout de flux HTTPS fonctionnel ✅  
+	- Aucun message `cURL error 60` dans les logs ✅  
 
 --------
 
